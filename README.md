@@ -1,4 +1,4 @@
-# news-JS
+# news-TS
 
 Run application:  
 - Copy and rename `.env.example` to `.env` and set variables with your data  

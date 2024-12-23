@@ -1,10 +1,11 @@
-const path = require('path');
-const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const DotenvWebpackPlugin = require('dotenv-webpack');
+import path from 'path';
+import { Configuration } from 'webpack';
+import { merge } from 'webpack-merge';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import DotenvWebpackPlugin from 'dotenv-webpack';
 
-const baseConfig = {
+const baseConfig: Configuration = {
     entry: path.resolve(__dirname, './src/index.ts'),
     mode: 'development',
     module: {
@@ -32,7 +33,7 @@ const baseConfig = {
     ],
 };
 
-module.exports = ({ mode }) => {
+module.exports = ({ mode }: { mode: string }) => {
     const isProductionMode = mode === 'prod';
     const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
 
