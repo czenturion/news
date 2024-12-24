@@ -1,14 +1,16 @@
+import { OptionsT } from "../../types/types";
+
 class Loader {
     private baseLink: string | undefined;
-    private options: Record<string, string> | undefined;
+    private options: OptionsT;
 
-    constructor(baseLink: string | undefined, options: Record<string, string>) {
+    constructor(baseLink: string | undefined, options: OptionsT) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     public getResp(
-        { endpoint, options = {} }: { endpoint: string, options: Record<string, string> },
+        { endpoint, options = {} }: { endpoint: string, options?: OptionsT },
         callback = () => {
             console.error('No callback for GET response');
         }
