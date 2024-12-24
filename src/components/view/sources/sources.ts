@@ -1,9 +1,14 @@
+import { HeadlineT } from '../../../types/types';
 import './sources.css';
 
 class Sources {
-    draw(data) {
+    draw(data: HeadlineT[]) {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector('#sourceItemTemp');
+
+        if (!sourceItemTemp) {
+            throw new Error('Template element #sourceItemTemp not found');
+        }
 
         data.forEach((item) => {
             const sourceClone = sourceItemTemp.content.cloneNode(true);

@@ -1,6 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-import { DataT } from './types';
+import { DataT } from '../../types/types';
 
 class App {
     private controller: AppController;
@@ -16,7 +16,7 @@ class App {
 
         if (sourcesElement) {
             sourcesElement.addEventListener('click', (e: Event) => this.controller.getNews(e, (data: DataT) => this.view.drawNews(data)));
-            this.controller.getSources((data) => this.view.drawSources(data));
+            this.controller.getSources((data: DataT) => this.view.drawSources(data));
         }
     }
 }
