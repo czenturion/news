@@ -1,5 +1,5 @@
 import AppLoader from './appLoader';
-import { Callback, DataT } from '../../types/types';
+import { Callback } from '../../types/types';
 
 
 class AppController extends AppLoader {

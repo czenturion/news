@@ -1,11 +1,7 @@
-import { ArticlesT, HeadlinesT } from '../../types/types';
 import News from './news/news';
 import Sources from './sources/sources';
+import { ArticlesT, HeadlinesT } from '../../types/types';
 
-type DataT = {
-    articles?: string
-    sources?: string
-}
 
 export class AppView {
     private news: News;
