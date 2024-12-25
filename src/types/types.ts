@@ -34,6 +34,6 @@ export type HeadlineT = {
 }
 
 
-export type OptionsT = Record<string, string | null> | undefined
+export type OptionsT = Record<string, string | null> | undefined;
 
-export type Callback<T> = (data?: T) => void;
+export type Callback<T = ArticlesT | HeadlinesT> = (data: Partial<T>) => void;

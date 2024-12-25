@@ -2,24 +2,29 @@ import { HeadlineT } from '../../../types/types';
 import './sources.css';
 
 class Sources {
-    draw(data: HeadlineT[]) {
+    draw(data: HeadlineT[]): void {
         const fragment = document.createDocumentFragment();
-        const sourceItemTemp = document.querySelector('#sourceItemTemp');
+        const sourceItemTemp = document.querySelector<HTMLTemplateElement>('#sourceItemTemp');
 
         if (!sourceItemTemp) {
             throw new Error('Template element #sourceItemTemp not found');
         }
 
         data.forEach((item) => {
-            const sourceClone = sourceItemTemp.content.cloneNode(true);
+            const sourceClone = sourceItemTemp.content.cloneNode(true) as DocumentFragment;
 
-            sourceClone.querySelector('.source__item-name').textContent = item.name;
-            sourceClone.querySelector('.source__item').setAttribute('data-source-id', item.id);
+            const sourceItemName = sourceClone.querySelector<HTMLElement>('.source__item-name');
+            const sourceItem = sourceClone.querySelector('.source__item');
 
+            if (sourceItemName && sourceItem) {
+                sourceItemName.textContent = item.name;
+                sourceItem.setAttribute('data-source-id', item.id);
+            }
+ 
             fragment.append(sourceClone);
         });
 
-        document.querySelector('.sources').append(fragment);
+        document.querySelector('.sources')?.append(fragment);
     }
 }
 
