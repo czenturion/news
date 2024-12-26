@@ -1,5 +1,6 @@
-import { HeadlineT } from '../../../types/types';
 import './sources.css';
+import { HeadlineT } from '../../../types/types';
+
 
 class Sources {
     draw(data: HeadlineT[]): void {
