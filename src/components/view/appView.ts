@@ -3,7 +3,7 @@ import Sources from './sources/sources';
 import { ArticlesT, HeadlinesT } from '../../types/types';
 
 
-export class AppView {
+class AppView {
     private news: News;
     private sources: Sources;
 
