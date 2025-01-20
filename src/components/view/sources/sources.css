@@ -32,3 +32,18 @@
     font-weight: 400;
     white-space: nowrap;
 }
+
+.sources::-webkit-scrollbar {
+    background: inherit;
+}
+
+.sources::-webkit-scrollbar-track {
+    background: inherit;
+    border: 2px solid #30c5ff;
+}
+
+.sources::-webkit-scrollbar-thumb {
+    background: #70d6ff;
+    height: 10px;
+    cursor: grab;
+  }
